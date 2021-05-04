@@ -49,7 +49,7 @@ public class CreatePDF {
 		Paragraph paragraph = new Paragraph();
 	    paragraph.add(new Paragraph(string_pdf, new Font(times,14)));
 	    
-	    String string_pdf2 = "Дополнительный текст, который выводится в PDF. При этом нужно понимать, что можно указывать значения переменных, которые будут выводится в файл PDF.";
+	    String string_pdf2 = "This test from Kazantsev with respect!";
 	    paragraph.add(new Paragraph(string_pdf2, new Font(times,14)));
 	
 	    try {
@@ -57,6 +57,17 @@ public class CreatePDF {
 		} catch (DocumentException e1) {
 			e1.printStackTrace();
 		}
+	    
+	  //организация перехода на следующую строку
+		 paragraph.clear();
+		 String string_pdf3 = " ";
+		 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
+		 
+		 try {
+				document.add(paragraph);
+			} catch (DocumentException e1) {
+				e1.printStackTrace();
+			}
     	
 	    /*
 	  //добавление изображения в pdf
