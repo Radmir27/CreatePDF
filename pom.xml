@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>Calculate</groupId>
-  <artifactId>Calculate4</artifactId>
+  <groupId>CreatePDF</groupId>
+  <artifactId>CreatePDF</artifactId>
   <version>1</version>
   <packaging>war</packaging>
-  <name>Laba4</name>
-  <description>Test for laba4</description>
+  <name>CreatePDF</name>
+  <description>Test for course work to create PDF</description>
   <url>http://maven.apache.org</url>
   
   <build>
-  <finalName>Calculate</finalName>
+  <finalName>CreatePDF</finalName>
   <defaultGoal>package</defaultGoal>
     
 <pluginManagement>
@@ -86,7 +86,11 @@
     <scope>provided</scope>
 </dependency>
         
-        
+        <dependency>
+    <groupId>com.itextpdf</groupId>
+    <artifactId>itextpdf</artifactId>
+    <version>5.5.13</version>
+</dependency>
         
     </dependencies> 
 </project>
