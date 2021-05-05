@@ -24,7 +24,7 @@ public class Calc extends HttpServlet {
 		String goals = "Hello";
 		PDF.Create(goals);
 		
-		NumberGet=PDF.filecheck;
+		NumberGet=PDF.filepath;
 		request.setAttribute("Number", NumberGet);
 		
 		request.getRequestDispatcher("/Results.jsp").forward(request, response);

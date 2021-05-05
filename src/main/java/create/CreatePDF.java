@@ -23,7 +23,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class CreatePDF {
 	
- public String filecheck;
+ public String filepath;
 	
     public CreatePDF() {
     	
@@ -32,9 +32,18 @@ public class CreatePDF {
       	
     	Document document = new Document(); //создание класса Document
 		try {
-			//  /var/apache-tomcat-9.0.39/webapps/CreatePDF/
-			filecheck = new File("").getCanonicalPath() +"/Check.pdf";
-			PdfWriter.getInstance(document, new FileOutputStream(new File(".").getCanonicalPath() +"Check.pdf"));
+			
+			filepath = new File("").getCanonicalPath();
+			String[] parsfilepath = filepath.split("/");
+			
+			int lengthpath = parsfilepath.length;
+			String abspath=""; 
+			for(int i=0;i<(lengthpath-1);i++) {
+				abspath=abspath+parsfilepath[i]+"/";
+			}
+			filepath=abspath+"webapps/CreatePDF/Check.pdf";
+						
+			PdfWriter.getInstance(document, new FileOutputStream(filepath));
 		} catch (FileNotFoundException | DocumentException e) {
 			e.printStackTrace();
 		}
