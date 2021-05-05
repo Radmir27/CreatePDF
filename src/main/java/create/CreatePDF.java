@@ -31,6 +31,8 @@ public class CreatePDF {
       	
     	Document document = new Document(); //создание класса Document
 		try {
+			//  /var/apache-tomcat-9.0.39/webapps/CreatePDF/
+			
 			PdfWriter.getInstance(document, new FileOutputStream("/var/apache-tomcat-9.0.39/webapps/CreatePDF/Check.pdf"));
 		} catch (FileNotFoundException | DocumentException e) {
 			e.printStackTrace();
