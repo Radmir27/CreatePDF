@@ -19,14 +19,16 @@ public class Calc extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributes(request);
-		
-		
-		request.getRequestDispatcher("/Results.jsp").forward(request, response);
-				 
+		 
 		CreatePDF PDF = new CreatePDF();
 		String goals = "Hello";
 		PDF.Create(goals);
 		
+		NumberGet=PDF.filecheck;
+		request.setAttribute("Number", NumberGet);
+		
+		request.getRequestDispatcher("/Results.jsp").forward(request, response);
+
 	}
 	
 	private static class RequestCalc {
