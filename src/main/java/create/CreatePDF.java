@@ -38,7 +38,7 @@ public class CreatePDF {
 			
 			int lengthpath = parsfilepath.length;
 			String abspath=""; 
-			for(int i=0;i<(lengthpath-1);i++) {
+			for(int i=0;i<(lengthpath);i++) {
 				abspath=abspath+parsfilepath[i]+"/";
 			}
 			filepath=abspath+"Check.pdf";
