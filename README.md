@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Kazantsev27/CreatePDF.svg?branch=master)](https://travis-ci.com/Kazantsev27/CreatePDF)
+
 # CreatePDF
 Версия 1.0 от 4 мая:
 - генерация PDF файла с заполнением полей в таблице.
