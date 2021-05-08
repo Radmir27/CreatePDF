@@ -34,7 +34,7 @@ public class CreatePDF {
 		try {
 			
 			filepath = new File("").getCanonicalPath();
-			String[] parsfilepath = filepath.split("/");
+			/*String[] parsfilepath = filepath.split("/");
 			
 			int lengthpath = parsfilepath.length;
 			String abspath=""; 
@@ -42,6 +42,9 @@ public class CreatePDF {
 				abspath=abspath+parsfilepath[i]+"/";
 			}
 			filepath=abspath+"Check.pdf";
+			filepath="/tmp/Check.pdf"; */
+			filepath=filepath+"/tmp/Check.pdf";
+			
 						
 			PdfWriter.getInstance(document, new FileOutputStream(filepath));
 		} catch (FileNotFoundException | DocumentException e) {
