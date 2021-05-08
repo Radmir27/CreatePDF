@@ -1,0 +1,8 @@
+language: java
+script:
+- mvn clean package
+after_script:
+- echo "Script finished!"
+after_success:
+- echo "Build CreatePDF - ready!"
+- ls -l $TRAVIS_BUILD_DIR/target
