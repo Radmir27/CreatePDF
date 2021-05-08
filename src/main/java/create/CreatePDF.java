@@ -41,7 +41,7 @@ public class CreatePDF {
 			for(int i=0;i<(lengthpath-1);i++) {
 				abspath=abspath+parsfilepath[i]+"/";
 			}
-			filepath=abspath+"/Check.pdf";
+			filepath=abspath+"Check.pdf";
 						
 			PdfWriter.getInstance(document, new FileOutputStream(filepath));
 		} catch (FileNotFoundException | DocumentException e) {
