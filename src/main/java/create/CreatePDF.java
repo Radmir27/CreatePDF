@@ -1,5 +1,6 @@
 package create;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -27,14 +28,28 @@ public class CreatePDF {
     public CreatePDF() {
     	
     }
-    public void Create(String numberpdf) {
+    public void Create(String numberpdf) throws IOException {
       	
     	Document document = new Document(); //создание класса Document
+    	
+    	String filepath = new File("").getCanonicalPath();
+		String[] parsfilepath = filepath.split("/");
+		
+		int lengthpath = parsfilepath.length;
+		String abspath=""; 
+		for(int i=0;i<(lengthpath-1);i++) {
+			abspath=abspath+parsfilepath[i]+"/";
+		}
+		filepath=abspath+"webapps/CreatePDF/Check.pdf";
+    	
 		try {	
-			PdfWriter.getInstance(document, new FileOutputStream("/var/apache-tomcat-9.0.39/webapps/CreatePDF/Check.pdf"));
+			PdfWriter.getInstance(document, new FileOutputStream(filepath));
 		} catch (FileNotFoundException | DocumentException e) {
 			e.printStackTrace();
 		}
+		
+		
+		
 			
 		document.open(); 
 		
