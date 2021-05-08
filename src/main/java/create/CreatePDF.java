@@ -22,9 +22,7 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class CreatePDF {
-	
-
-	
+		
     public CreatePDF() {
     	
     }
@@ -42,30 +40,28 @@ public class CreatePDF {
 		}
 		filepath=abspath+"webapps/CreatePDF/Check.pdf";
 		String imagepath=abspath+"webapps/CreatePDF/picture/ugatu.png";
+		String fontpath =abspath+"/webapps/CreatePDF/fonts/times.ttf";
     	
 		try {	
 			PdfWriter.getInstance(document, new FileOutputStream(filepath));
 		} catch (FileNotFoundException | DocumentException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-			
+					
 		document.open(); 
 		
 		BaseFont times = null;
 		try {
-			times = BaseFont.createFont("/fonts/times.ttf", "cp1251", BaseFont.EMBEDDED);
+			times = BaseFont.createFont(fontpath, "cp1251", BaseFont.EMBEDDED);
 		} catch (DocumentException | IOException e) {
 			e.printStackTrace();
 		}
 		
-		String string_pdf = "Hello! You are cool.";
+		String string_pdf = "Добрый день замечательные группы ПИ второго курса кафедры АСУ УГАТУ! Тестовое приложения для создания PDF файла.";
 		Paragraph paragraph = new Paragraph();
 	    paragraph.add(new Paragraph(string_pdf, new Font(times,14)));
 	    
-	    String string_pdf2 = "This test from Kazantsev with respect!";
+	    String string_pdf2 = "Дополнительный текст, который выводится в PDF. При этом нужно понимать, что можно указывать значения переменных, которые будут выводится в файл PDF.";
 	    paragraph.add(new Paragraph(string_pdf2, new Font(times,14)));
 	
 	    try {
