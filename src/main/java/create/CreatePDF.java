@@ -41,6 +41,7 @@ public class CreatePDF {
 			abspath=abspath+parsfilepath[i]+"/";
 		}
 		filepath=abspath+"webapps/CreatePDF/Check.pdf";
+		String imagepath=abspath+"webapps/CreatePDF/picture/ugatu.png";
     	
 		try {	
 			PdfWriter.getInstance(document, new FileOutputStream(filepath));
@@ -84,12 +85,11 @@ public class CreatePDF {
 				e1.printStackTrace();
 			}
     	
-	    /*
+	    
 	  //добавление изображения в pdf
-	    URL url = getClass().getResource("/picture/ugatu.png");
 	    Image img = null;
 		try {
-			img = Image.getInstance(url.toString());
+			img = Image.getInstance(imagepath);
 			
 			
 		} catch (BadElementException e2) {
@@ -114,7 +114,6 @@ public class CreatePDF {
 	    
 		 //организация перехода на следующую строку
 		 paragraph.clear();
-		 String string_pdf3 = " ";
 		 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
 		 
 		 try {
@@ -122,7 +121,7 @@ public class CreatePDF {
 			} catch (DocumentException e1) {
 				e1.printStackTrace();
 			}
-	    */
+	    
 		 
 		//добавление таблицы
 		 PdfPTable table = new PdfPTable(4); //создание таблицы с 4 столбцами
